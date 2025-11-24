@@ -25,3 +25,11 @@ input{
     margin-top: 50px;
     color:rgb(89, 11, 58)
 }
+.mensajes{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.error{
+
+    color: red;
+}

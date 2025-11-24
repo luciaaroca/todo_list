@@ -1,7 +1,7 @@
 import React from "react";
 import './Card.css'
 
-const Card = ({data,remove}) => {
+const Card = ({data,remove}) => { //le pasamos del padre data y remove
   console.log(data);
   const {title, description, time} = data //data -> datos de nuestro data.json
 
