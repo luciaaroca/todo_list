@@ -1,0 +1,23 @@
+App --> App.jsx
+    Prueba.jsx 
+    Header --> Header.jsx <header>
+        img
+        Nav---> Header.jsx <nav>
+        Button --->Header.jsx <button>
+
+    Main   --> Main.jsx
+        TodoList --> TodoList.jsx --> form + (botón clear/ reset)
+            Card --> Card.jsx -> (bptón borrar)
+            Card
+            Card
+            Card
+            ..............etc
+
+
+    Footer --> Main.jsx <footer>
+
+
+npm install create-react-component-folder --save-dev
+npx crcf src/components/Header Main Footer -j --notest -f
+npx crcf src/components/Main/Todolist -j --notest -f
+   

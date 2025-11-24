@@ -1,0 +1,27 @@
+[
+        {
+          "title": "Estudiar",
+          "description": "Hacer varios ejercicios de clase y repasarlos",
+          "time": "2h"
+        },
+        {
+          "title": "Hacer la compra",
+          "description": "Comprar comida para toda la semana",
+          "time": "40min"
+        },
+        {
+          "title": "Limpiar el baño",
+          "description": "Barrer, fregar y enjabonar",
+          "time": "40min"
+        },
+        {
+          "title": "Hacer la comida",
+          "description": "Hacerme el tupper para mañana",
+          "time": "15min"
+        },
+        {
+          "title": "Ir al gym",
+          "description": "Clase de Body pump 20:00",
+          "time": "45min"
+        }
+      ]

@@ -1,0 +1,27 @@
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.formulario{
+   
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    padding: 20px;
+    text-align: center;
+}
+input{
+    border-color: aliceblue;
+    border-radius: 3px;
+    
+}
+.time{
+    margin-bottom: 20px ;
+}
+.completar{
+    margin-top: 50px;
+    color:rgb(89, 11, 58)
+}
