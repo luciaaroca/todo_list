@@ -38,7 +38,7 @@ const Todolist = () => {
             }
 
             //AÑADIR TASKS->Cada vez handleSubmit-> añadimos objeto al array -> con un spread operator array + values nuevos
-            setTasks([...tasks, values])
+            setTasks([...tasks, {...values,completed: false}]) //añadimos completed para checkbox
 
             //AÑADIR MENSAJE -> mensaje de carga correcta
             setMensaje("Tarea añadida correctamente");
@@ -56,13 +56,24 @@ const Todolist = () => {
 
       
 
-      //--------------------
-      //FUNCIONES
+      //-------------FUNCIONES-----------//
+      
       //paintData()->Recorre el array de tasks(cada tarea añadida) y devuelve un componente Card
       //.map()-> recorre nuestro array y nos devuelve otro
-      const paintData = () => tasks.map((task,index) => <Card data={task} remove={() =>removeTask(index)} key={uuidv4()}/>);//le pasamos las funciones y datos el hijo
+      const paintData = () =>
+         tasks.map((task,index) =>(
+         <Card data={task} 
+         remove={() =>removeTask(index)} 
+         checkcompleted={()=> completedTask(index)}
+         edit={(updatedTask)=>editTask(index,updatedTask)}
+         key={uuidv4()}
+         />
+        )
+        );//le pasamos las funciones y datos el hijo
+
       //loadData() ->recarga los datos
-      const loadData = () => setTasks(tareas); 
+      const loadData = () => setTasks(tareas);
+
       //removeData() ->vacía array de Tasks
       const removeData = () => setTasks ([]); 
 
@@ -73,8 +84,30 @@ const Todolist = () => {
           const filteredTasks = tasks.filter((task,index) => index != i) //usamos filter
           setTasks(filteredTasks) //actualiza el estado de tasks
       }; 
-        
-      //--------------------------
+
+      //completedTask (check)-> función para checkar una tarea completada
+      //recibe i (posición o índice )
+      //tasks--> array de tareas desde el estado (lo llamamos asi en useState)
+      //.map()--> recorremos el array y devolvemos otro igual aplicando una función
+      //(task,index)-->task(elemento actual en la iteraccion)//index(índice 0 1 2 3)
+      /*operador ternario: si index es igual a i --->(posición que se ha pasado), se devuelve un nuevo objeto
+      con los valores del array task (...task) pero midificanto completed a el contrario de lo que estaba antes(false era antes)
+      sino----> devolvemos task sin tocarlo*/
+      //todo esto hay que pasarlo al hijo-> card en paintData()
+      const completedTask = (i) => {
+        const updatedTasks = tasks.map((task, index) =>
+        index === i ? { ...task, completed: !task.completed } : task
+        );
+        setTasks(updatedTasks);
+      };
+      
+      //editTask-->
+      const editTask = (i,updatedTask)=>{
+        let data = [...tasks]; //crea un array totalmente nuevo
+        data[i]= updatedTask;
+        setTasks(data);
+      }
+      //--------------------------------------//
 
       //RETURN -> lo que renderizaremos en la pantalla
       //onSubmit={handleSubmit} -> cuando el usuario envía el formulario completo

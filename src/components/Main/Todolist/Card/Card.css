@@ -1,9 +1,11 @@
 .card{
+    margin:0 auto;
     border-radius: 5px;
     border: 3px solid rgb(175, 124, 141);
     background-color: rgb(237, 219, 205);
     margin-bottom: 20px;
     padding: 20px;
+    width: 60%;
 }
 button{
     background-color: rgb(175, 124, 141);
@@ -19,8 +21,35 @@ h3{
     font-size: 35px;
     color: rgb(124, 120, 120);
 }
+p{
+  color: rgb(124, 120, 120);  
+}
 .description{
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+}
+
+.headerCard {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* separación entre checkbox y título */
+}
+
+.headerCard input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+/* .botonesEdit{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+} */
+button{
+    margin-right: 10px;
+}
+.formEdit{
+    margin-top: 20px;
 }
