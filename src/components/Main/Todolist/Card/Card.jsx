@@ -26,10 +26,10 @@ const Card = ({data,remove,checkcompleted, edit}) => { //le pasamos del padre da
 
   //CARD
   return <article className="card">
-    <section className="headerCard">
+    <div className="headerCard">
       <input type="checkbox" checked={completed} onChange={checkcompleted}/> 
       <h3>{title || "--" }</h3>
-    </section>
+    </div>
     <p className="description">{description || "--" }</p>
     <p><b>{"⏱️ " + time || "--" }</b></p>
     <br/>
@@ -53,10 +53,10 @@ const Card = ({data,remove,checkcompleted, edit}) => { //le pasamos del padre da
             value={editValues.time}
             onChange={handleEditChange } 
             className="time"/><br />
-          <article className="botonesEdit">
+          <div className="botonesEdit">
             <button type="submit">SAVE</button>
             <button onClick={() => setIsEditing(false)}>Cancel</button> {/*volvemos a cambiar el estado de la card --> false*/}
-          </article>
+          </div>
         </form>
     : ""}
     </article>;

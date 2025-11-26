@@ -13,7 +13,8 @@ const Todolist = () => {
       const [values, setValues] = useState({ //FORMULARIO (estado inicial)
             title: "",
             description: "",
-            time: ""
+            time: "",
+            completed:false
           });
       
       //Se ejecuta cada vez que el usuario escribe un input
@@ -38,7 +39,7 @@ const Todolist = () => {
             }
 
             //AÑADIR TASKS->Cada vez handleSubmit-> añadimos objeto al array -> con un spread operator array + values nuevos
-            setTasks([...tasks, {...values,completed: false}]) //añadimos completed para checkbox
+            setTasks([...tasks, values]) //añadimos completed para checkbox
 
             //AÑADIR MENSAJE -> mensaje de carga correcta
             setMensaje("Tarea añadida correctamente");
