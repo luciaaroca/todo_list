@@ -145,7 +145,8 @@ const Todolist = () => {
             <button onClick={removeData}>Clear</button> 
           </div>
           {/* Llamamos a la funcion de paintData para que se vean las cards */}
-          {paintData()}
+          <section> {paintData()}</section>
+          
         </div>;
 };
 
